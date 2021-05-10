@@ -2,8 +2,10 @@
     pageEncoding="UTF-8"%>
     
 <%!
-//declaration
-%>
+private int add(int a, int b) {
+	return a+ b;
+}
+%>    
     
 <!DOCTYPE html>
 <html>
@@ -12,14 +14,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>script</p>
-<%
-//scriptlet
-%>
 
-<p>declaration선언부</p>
-<%!
-//declaration2
-%>
+<%= add(9,8) %>
+
 </body>
 </html>

@@ -3,11 +3,11 @@
 <%@ page session = "true" %>
 <%@ page import = "java.util.Date" %>
 <%@ page import = "java.text.SimpleDateFormat" %>
-<% 
+<%
 	Date time = new Date();
 	SimpleDateFormat formatter = 
 	 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
- %>
+%>
 <!DOCTYPE html>
 <html>
 <head>

@@ -9,9 +9,6 @@ cookie.setPath(request.getContextPath());
 response.addCookie(cookie);
 %>
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>

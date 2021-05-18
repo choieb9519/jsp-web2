@@ -46,7 +46,7 @@ application.setAttribute("appAttr1", "appVal1");
    <hr>
 	<%= request.getAttribute("reqAttr0") %>
    <br>
-   ${reqAttr0 }
+   ${appAttr0 }
    
 </div>
 </body>

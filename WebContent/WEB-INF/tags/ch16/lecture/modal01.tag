@@ -1,5 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
-<%@ attribute name="id" %>
+<%@ attribute name="id"  required="true"%>
 
 <!-- Modal -->
 <div class="modal fade" id="${id }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -26,10 +26,16 @@
 	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal02">
 		Launch demo modal
 	</button>
+	
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal03">
+		Launch demo modal
+	</button>
 </div>
 
 <my:modal1 id="#exampleModal01"/>
-<my:modal1 id="#exampleModal02"/>/>
+<my:modal1 id="#exampleModal02"/>
+<my:modal1 id="#exampleModal03"/>
 
 </body>
 </html>

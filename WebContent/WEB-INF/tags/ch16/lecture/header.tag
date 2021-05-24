@@ -5,7 +5,7 @@
 
 <%
 	String headStartTag = null;
-	String headEndtTag = null;
+	String headEndTag = null;
 	
 	if (level ==null) {
 		headStartTag = "<h1>";
@@ -23,5 +23,5 @@
 %>
 
 <%= headStartTag %>
-${title}
+	${title}
 <%= headEndTag %>

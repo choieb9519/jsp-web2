@@ -33,7 +33,6 @@ pageContext.setAttribute("title", "writer");
 	<hr>
 	title : ${book1[title] } <br>
 	
-	
 </div>
 </body>
 </html>

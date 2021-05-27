@@ -22,7 +22,6 @@
 	<%
 	Book book = (Book) request.getAttribute("book1");
 	%>
-	
 	book : <%= book != null %> 
 	
 	<br>

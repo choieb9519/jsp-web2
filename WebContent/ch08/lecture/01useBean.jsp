@@ -11,7 +11,7 @@ book.setWriter("신용권");
 
 request.setAttribute("book1", book);
 %>
-
+ 
 
 <!DOCTYPE html>
 <html>
@@ -32,10 +32,3 @@ request.setAttribute("book1", book);
 </div>
 </body>
 </html>
-
-
-
-
-
-
-

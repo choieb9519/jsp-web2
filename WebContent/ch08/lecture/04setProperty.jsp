@@ -7,7 +7,6 @@
 	<jsp:setProperty name="book" property="title" value="JAVA" />
 </jsp:useBean>
 
-
 <!DOCTYPE html>
 <html>
 <head>

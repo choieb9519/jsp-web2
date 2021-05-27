@@ -1,6 +1,6 @@
 package ch08;
 
-public class book {
+public class Book {
 	private String code;
 	private String title;
 	private String writer;

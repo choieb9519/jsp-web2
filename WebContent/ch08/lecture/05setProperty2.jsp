@@ -40,8 +40,3 @@ pageContext.setAttribute("book", book);
 </div>
 </body>
 </html>
-
-
-
-
-

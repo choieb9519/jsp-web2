@@ -37,8 +37,3 @@ pageContext.setAttribute("arr", arr);
 </div>
 </body>
 </html>
-
-
-
-
-

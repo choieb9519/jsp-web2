@@ -1,24 +1,20 @@
-package boardForm1;
+package ch20;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 /**
- * Application Lifecycle Listener implementation class BoardAppListener
+ * Application Lifecycle Listener implementation class AppListener01
  *
  */
-//@WebListener
-public class BoardAppListener implements ServletContextListener {
+
+public class AppListener01 implements ServletContextListener {
 
     /**
      * Default constructor. 
      */
-    public BoardAppListener() {
+    public AppListener01() {
         // TODO Auto-generated constructor stub
     }
 
@@ -33,11 +29,7 @@ public class BoardAppListener implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
-    	System.out.println("board app listener initialized.....");
-    	ServletContext application = sce.getServletContext();
-    	List<Board> list = new ArrayList<>();
-    	
-    	application.setAttribute("boards", list);
+         // TODO Auto-generated method stub
     }
 	
 }

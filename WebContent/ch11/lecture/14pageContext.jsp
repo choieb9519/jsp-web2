@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +13,22 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	pageContext : ${pageContext }
+	<br>
+	request : ${pageContext.request }
+	<br>
+	session : ${pageContext.session }
+	<br>
+	application : ${pageContext.servletContext }
+	<br>
+	contextPath : ${pageContext.request.contextPath }
+	<br>
+	
 </div>
 </body>
 </html>
+
+
 
 
 

@@ -3,13 +3,10 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
+<jsp:useBean id="book" class="ch08.Book">
+	<jsp:setProperty name="book" property="title" value="JAVA" />
+</jsp:useBean>
 
-%>
 
 <!DOCTYPE html>
 <html>
@@ -21,12 +18,7 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	
 </div>
 </body>
 </html>
-
-
-
-
-

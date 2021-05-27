@@ -2,13 +2,15 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
+List<String> list = new ArrayList<>();
+list.add("java");
+list.add("html");
+list.add("mariadb");
+list.add("css");
 
+pageContext.setAttribute("list1", list);
+pageContext.setAttribute("i", "3");
 %>
 
 <!DOCTYPE html>
@@ -21,10 +23,14 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	0 : ${list1[0] } <br>
+	1 : ${list1[1] } <br>
+	2 : ${list1["2"] } <br>
+	3 : ${list1[i] } <br>
 </div>
 </body>
 </html>
+
 
 
 

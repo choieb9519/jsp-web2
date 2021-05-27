@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +13,22 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	<form action="11el-sample2.jsp" method="post">
+		이름 : <input type="text" name="myname" /> <br>
+		나이 : <input type="number" name="age" /> <br>
+		이메일 : <input type="email" name="memberEmail" /> <br>
+		<input type="submit" value="전송" /> <br>
+	</form>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

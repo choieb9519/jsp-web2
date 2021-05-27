@@ -1,14 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+request.setAttribute("desc", "<b>는 굵은 글씨로 표시됨");
 %>
 
 <!DOCTYPE html>
@@ -21,10 +19,16 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	b 태그 설명 : ${desc }
+	<br>
+	&lt;&gt;
+	
+	<br>
+	b 태그 설명 : <c:out value="${desc }" />
 </div>
 </body>
 </html>
+
 
 
 

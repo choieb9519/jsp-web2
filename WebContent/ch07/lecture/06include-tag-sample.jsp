@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +13,12 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	<h1>Main Contents</h1>
+	
+	<jsp:include page="06include-tag-sample-sub.jsp">
+		<jsp:param value="10" name="start"/>
+		<jsp:param value="20" name="end"/>
+	</jsp:include>
 </div>
 </body>
 </html>
-
-
-
-
-

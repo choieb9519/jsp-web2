@@ -2,15 +2,9 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+pageContext.setAttribute("myReq", request);
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +15,18 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	expression : <%= request.getContextPath() %>
+	<br>
+	el : ${myReq.contextPath } 
+	<br>
+	method : ${myReq.method } 
+	<br>
+	requestedSessionId : ${myReq.requestedSessionId } 
 </div>
 </body>
 </html>
+
+
 
 
 

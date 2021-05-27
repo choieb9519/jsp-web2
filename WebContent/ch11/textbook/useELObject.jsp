@@ -4,11 +4,7 @@
 <% request.setCharacterEncoding("utf-8"); %>
 
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+request.setAttribute("name", "최범균");
 %>
 
 <!DOCTYPE html>
@@ -21,12 +17,13 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	요청 URI : ${pageContext.request.requestURI } <br>
+	request의 name 속성 : ${requestScope.name } <br>
+	request의 name 속성 : ${name } <br>
+	code 파라미터 : ${param.code }
 </div>
 </body>
 </html>
-
-
 
 
 

@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +13,26 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	<h1>산술 연산</h1>
+\${3 + 5 } = ${3 + 5 } <br>
+\${3 - 5 } = ${3 - 5 } <br>
+\${3 * 5 } = ${3 * 5 } <br>
+\${3 / 5 } = ${3 / 5 } <br>
+\${3 % 5 } = ${3 % 5 } <br>
+\${3 mod 5 } = ${3 mod 5 } <br>
+	
+	
+	
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

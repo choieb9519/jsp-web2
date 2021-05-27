@@ -4,13 +4,9 @@
 <% request.setCharacterEncoding("utf-8"); %>
 
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+session.setAttribute("MEMBERID", "madvirus");
+session.setAttribute("NAME", "최범균");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +17,7 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	세션 정보를 저장하였습니다.
 </div>
 </body>
 </html>

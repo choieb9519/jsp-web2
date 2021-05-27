@@ -1,14 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*" %>
+<%@ page import="util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+request.setAttribute("price", 12345L);
 %>
 
 <!DOCTYPE html>
@@ -21,11 +18,10 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	가격은 <b>${FormatUtil.number(price, '#,##0') }</b>원 입니다.	
 </div>
 </body>
 </html>
-
 
 
 

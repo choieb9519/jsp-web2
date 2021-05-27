@@ -2,15 +2,9 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+	pageContext.setAttribute("myAttr", 2.14);
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +15,9 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	\${Math.round(3.14) } : ${Math.round(3.14) } <br>
+	\${Math.round(myAttr) } : ${Math.round(myAttr) } <br>
+	
 </div>
 </body>
 </html>

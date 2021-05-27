@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +13,24 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	cookie1 : ${cookie["my-cookie"] }
+	<br>
+	cookie2 : ${cookie.JSESSIONID }
+	
+	<hr>
+	
+	cookie value 1 : ${cookie["my-cookie"].value }
+	<br>
+	cookie value 2 : ${cookie.JSESSIONID.value }
+	
+	<hr>
+	cookie httpOnly 1 : ${cookie["my-cookie"].httpOnly }
+	<br>
+	cookie httpOnly 2 : ${cookie.JSESSIONID.httpOnly }
 </div>
 </body>
 </html>
+
 
 
 

@@ -2,15 +2,10 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-
 <%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
+pageContext.setAttribute("a", 50);
+pageContext.setAttribute("b", 30);
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +16,12 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	\${a + b } = ${a + b } <br>
+	\${a - b } = ${a - b } <br>
+	\${a * b } = ${a * b } <br>
+	\${a / b } = ${a / b } <br>
+	\${a % b } = ${a % b } <br>
+	\${a mod b } = ${a mod b } <br>
 </div>
 </body>
 </html>

@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +13,23 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	<table class="table table-bordered" >
+		<tr>
+			<td>제품번호</td>
+			<td>XXXX</td>
+		</tr>
+		<tr>
+			<td>가격</td>
+			<td>10,000원</td>
+		</tr>
+	</table>
+	
+	<jsp:include page="infoSub.jsp">
+		<jsp:param value="B" name="type"/>
+	</jsp:include>	
 </div>
 </body>
 </html>
-
-
 
 
 

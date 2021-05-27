@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +13,17 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	<form action="06setProperty2.jsp" method="post">
+		제목 : <input type="text" name="title" /> <br>
+		저자 : <input type="text" name="writer" /> <br>
+		가격 : <input type="number" name="price" /> <br>
+		<input type="submit" value="등록" />
+	</form>
 </div>
 </body>
 </html>
+
+
 
 
 

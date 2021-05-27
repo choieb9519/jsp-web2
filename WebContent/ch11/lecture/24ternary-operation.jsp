@@ -3,14 +3,6 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
-<%
-pageContext.setAttribute("attr1", "pageVal1");
-request.setAttribute("attr1", "reqVal1");
-session.setAttribute("attr1", "sesVal1");
-application.setAttribute("attr1", "appVal1");
-
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +13,9 @@ application.setAttribute("attr1", "appVal1");
 </head>
 <body>
 <div class="container">
-	${attr1 }
+	<h1>삼항 연산</h1>
+	\${true ? 'a' : 'b' } : ${true ? 'a' : 'b' } <br>
+	\${false ? 'a' : 'b' } : ${false ? 'a' : 'b' } <br> 
 </div>
 </body>
 </html>

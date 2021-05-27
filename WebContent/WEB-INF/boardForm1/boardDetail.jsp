@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/ch16/lecture" %>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
-<%@ taglib prefix="s1" tagdir="/WEB-INF/tags/sample1" %>
+<%@ taglib prefix="s1" tagdir="/WEB-INF/tags/boardForm1" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 

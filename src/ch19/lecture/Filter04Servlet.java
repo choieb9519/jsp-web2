@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Filter04Servlet
  */
-@WebServlet("/Filter04Servlet")
+@WebServlet("/filter04")
 public class Filter04Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,8 +26,16 @@ public class Filter04Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//1. 요청정보 파악
+		//2. 비즈니스로직(모델) 처리
+		//3. forward or redirect
+		
+		System.out.println("filter04 servlet...");
+		
+		String name = request.getParameter("name");
+		String greeting = name + ", hello~~~";
+		
+		response.getWriter().print(greeting);
 	}
 
 	/**

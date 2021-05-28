@@ -3,6 +3,8 @@ package ch14;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -38,22 +40,68 @@ public class JDBC01Servlet extends HttpServlet {
 	}
 
 	private void executeJDBC() {
-		String sql = "SELECT CustomerName From Customets WHERE CustomerID = 1";
+		String sql = "SELECT CustomerName From Customers WHERE CustomerID = 1";
 		
-		//연결
 		String url ="jdbc:mysql://3.35.141.156/test";
 		String user = "root";
 		String password = "wnddkdwjdqhcjfl1";
-		Connection con = DriverManager.getConnection(url, user, password);
 		
-		//statement 생성
-		Statement stmt = con.createStatement();
-		//쿼리 실행, 결과를 리턴(resultSet)
-		ResultSet re = stmt.executeQuery(sql);
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
 		
-		//결과 확인
-		String name = rs.getString(1);
-		System.out.println(name);
+		try {
+			//클래스 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			
+			//연결
+			con = DriverManager.getConnection(url, user, password);
+			
+			//statement 생성
+			stmt = con.createStatement();
+			//쿼리 실행, 결과를 리턴(resultSet)
+			rs = stmt.executeQuery(sql);
+			
+			//결과 확인
+			if (rs.next()) {
+			String name = rs.getString(1);
+			System.out.println(name);
+			}
+			
+		
+		} catch (Exception e) {
+		//try 블록 닫기
+			e.printStackTrace();
+		} finally {
+			//연결 종료
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			if (stmt != null) {
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	/**

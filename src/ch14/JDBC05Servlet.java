@@ -6,8 +6,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,19 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ch14.bean.Employee;
-
 /**
- * Servlet implementation class JDBC12Servlet
+ * Servlet implementation class JDBC05Servlet
  */
-@WebServlet("/JDBC12Servlet")
-public class JDBC12Servlet extends HttpServlet {
+@WebServlet("/JDBC05Servlet")
+public class JDBC05Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JDBC12Servlet() {
+    public JDBC05Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,21 +32,13 @@ public class JDBC12Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<Employee> list = executeJDBC();
-	
-		request.setAttribute("employees", list);
-		
-		String path = "/ch14/jdbc12.jsp";
-		request.getRequestDispatcher(path).forward(request, response);
+		executeJDBC();
+		response.getWriter().print("<h1>JDBC05</h1>");
 	}
 	
-	private List<Employee> executeJDBC() {
+	private void executeJDBC() {
 
-		List<Employee> list = new ArrayList<>(); // 리턴할 객체
-		
-		String sql = "SELECT EmployeeID, LastName, FirstName " + 
-				"FROM Employees ";
+		String sql = "SELECT DISTINCT City FROM Customers ORDER BY City";
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
@@ -59,11 +47,11 @@ public class JDBC12Servlet extends HttpServlet {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-
+		
 		try {
 			// 클래스 로딩
 			Class.forName("com.mysql.cj.jdbc.Driver");
-
+			
 			// 연결
 			con = DriverManager.getConnection(url, user, password);
 
@@ -75,12 +63,9 @@ public class JDBC12Servlet extends HttpServlet {
 
 			// 결과 탐색
 			while (rs.next()) {
-				Employee employee = new Employee();
-				employee.setId(rs.getInt(1));
-				employee.setLastName(rs.getString(2));
-				employee.setFirstName(rs.getString(3));
+				String city = rs.getString(1);
 				
-				list.add(employee);
+				System.out.println(city);
 			}
 
 		} catch (Exception e) {
@@ -114,8 +99,6 @@ public class JDBC12Servlet extends HttpServlet {
 				}
 			}
 		}
-
-		return list;
 
 	}
 

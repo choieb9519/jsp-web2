@@ -15,19 +15,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ch14.bean.Employee;
-
 /**
- * Servlet implementation class JDBC12Servlet
+ * Servlet implementation class JDBC08Servlet
  */
-@WebServlet("/JDBC12Servlet")
-public class JDBC12Servlet extends HttpServlet {
+@WebServlet("/JDBC08Servlet")
+public class JDBC08Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JDBC12Servlet() {
+    public JDBC08Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,21 +34,19 @@ public class JDBC12Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		List<Employee> list = executeJDBC();
+		String name = executeJDBC();
 	
-		request.setAttribute("employees", list);
+		request.setAttribute("name", name);
 		
-		String path = "/ch14/jdbc12.jsp";
+		String path = "/ch14/jdbc08.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	
-	private List<Employee> executeJDBC() {
+	private String executeJDBC() {
 
-		List<Employee> list = new ArrayList<>(); // 리턴할 객체
+		String name = ""; // 리턴할 변수
 		
-		String sql = "SELECT EmployeeID, LastName, FirstName " + 
-				"FROM Employees ";
+		String sql = "SELECT CustomerName FROM Customers WHERE CustomerID = 1";
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
@@ -74,13 +70,8 @@ public class JDBC12Servlet extends HttpServlet {
 			rs = stmt.executeQuery(sql);
 
 			// 결과 탐색
-			while (rs.next()) {
-				Employee employee = new Employee();
-				employee.setId(rs.getInt(1));
-				employee.setLastName(rs.getString(2));
-				employee.setFirstName(rs.getString(3));
-				
-				list.add(employee);
+			if (rs.next()) {
+				name = rs.getString(1);
 			}
 
 		} catch (Exception e) {
@@ -115,7 +106,7 @@ public class JDBC12Servlet extends HttpServlet {
 			}
 		}
 
-		return list;
+		return name;
 
 	}
 

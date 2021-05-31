@@ -17,64 +17,65 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class JDBC01Servlet
  */
 @WebServlet("/JDBC01Servlet")
-			//
 public class JDBC01Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public JDBC01Servlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public JDBC01Servlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		executeJDBC();
-		
+
 		response.getWriter().print("<h1>jdbc01</h1>");
+
 	}
 
 	private void executeJDBC() {
-		String sql = "SELECT CustomerName From Customers WHERE CustomerID = 1";
-		
-		String url ="jdbc:mysql://3.35.141.156/test";
+
+		String sql = "SELECT CustomerName FROM Customers WHERE CustomerID = 1";
+
+		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
 		String password = "wnddkdwjdqhcjfl1";
-		
+
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		
 		try {
-			//클래스 로딩
+			// 클래스 로딩
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			
-			//연결
+			// 연결
 			con = DriverManager.getConnection(url, user, password);
-			
-			//statement 생성
+
+			// statement 생성
 			stmt = con.createStatement();
-			//쿼리 실행, 결과를 리턴(resultSet)
+
+			// 쿼리 실행, 결과(ResultSet) 리턴
 			rs = stmt.executeQuery(sql);
-			
-			//결과 확인
+
+			// 결과 탐색
 			if (rs.next()) {
-			String name = rs.getString(1);
-			System.out.println(name);
+				String name = rs.getString(1);
+				System.out.println(name);
 			}
-			
-		
+
 		} catch (Exception e) {
-		//try 블록 닫기
 			e.printStackTrace();
 		} finally {
-			//연결 종료
+			// 연결 닫기
 			if (rs != null) {
 				try {
 					rs.close();
@@ -83,7 +84,7 @@ public class JDBC01Servlet extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
-			
+
 			if (stmt != null) {
 				try {
 					stmt.close();
@@ -92,7 +93,7 @@ public class JDBC01Servlet extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
-			
+
 			if (con != null) {
 				try {
 					con.close();
@@ -102,12 +103,15 @@ public class JDBC01Servlet extends HttpServlet {
 				}
 			}
 		}
+
 	}
-	
+
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

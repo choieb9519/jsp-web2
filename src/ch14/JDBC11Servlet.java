@@ -6,8 +6,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,16 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import ch14.bean.Employee;
 
 /**
- * Servlet implementation class JDBC12Servlet
+ * Servlet implementation class JDBC11Servlet
  */
-@WebServlet("/JDBC12Servlet")
-public class JDBC12Servlet extends HttpServlet {
+@WebServlet("/JDBC11Servlet")
+public class JDBC11Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JDBC12Servlet() {
+    public JDBC11Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,20 +35,22 @@ public class JDBC12Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Employee> list = executeJDBC();
-	
-		request.setAttribute("employees", list);
+		String employeeId = request.getParameter("eid");
 		
-		String path = "/ch14/jdbc12.jsp";
+		Employee employee = executeJDBC(employeeId);
+		request.setAttribute("emp", employee);
+		
+		String path = "/ch14/jdbc11.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	
-	private List<Employee> executeJDBC() {
+	private Employee executeJDBC(String id) {
 
-		List<Employee> list = new ArrayList<>(); // 리턴할 객체
+		Employee employee = null; // 리턴할 객체
 		
 		String sql = "SELECT EmployeeID, LastName, FirstName " + 
-				"FROM Employees ";
+				"FROM Employees " + 
+				"WHERE EmployeeID = " + id;
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
@@ -74,13 +74,11 @@ public class JDBC12Servlet extends HttpServlet {
 			rs = stmt.executeQuery(sql);
 
 			// 결과 탐색
-			while (rs.next()) {
-				Employee employee = new Employee();
+			if (rs.next()) {
+				employee = new Employee();
 				employee.setId(rs.getInt(1));
 				employee.setLastName(rs.getString(2));
 				employee.setFirstName(rs.getString(3));
-				
-				list.add(employee);
 			}
 
 		} catch (Exception e) {
@@ -115,7 +113,7 @@ public class JDBC12Servlet extends HttpServlet {
 			}
 		}
 
-		return list;
+		return employee;
 
 	}
 

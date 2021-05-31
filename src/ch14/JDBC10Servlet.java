@@ -6,8 +6,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,19 +13,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ch14.bean.Employee;
+import ch14.bean.Customer;
 
 /**
- * Servlet implementation class JDBC12Servlet
+ * Servlet implementation class JDBC10Servlet
  */
-@WebServlet("/JDBC12Servlet")
-public class JDBC12Servlet extends HttpServlet {
+@WebServlet("/JDBC10Servlet")
+public class JDBC10Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JDBC12Servlet() {
+    public JDBC10Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,21 +34,21 @@ public class JDBC12Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
 		
-		List<Employee> list = executeJDBC();
-	
-		request.setAttribute("employees", list);
+		Customer customer = executeJDBC(id);
 		
-		String path = "/ch14/jdbc12.jsp";
+		request.setAttribute("customer", customer);
+		
+		String path = "/ch14/jdbc10.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	
-	private List<Employee> executeJDBC() {
+	private Customer executeJDBC(String id) {
 
-		List<Employee> list = new ArrayList<>(); // 리턴할 객체
+		Customer customer = null; // 리턴할 객체
 		
-		String sql = "SELECT EmployeeID, LastName, FirstName " + 
-				"FROM Employees ";
+		String sql = "SELECT CustomerName, City FROM Customers WHERE CustomerID = " + id;
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
@@ -74,13 +72,13 @@ public class JDBC12Servlet extends HttpServlet {
 			rs = stmt.executeQuery(sql);
 
 			// 결과 탐색
-			while (rs.next()) {
-				Employee employee = new Employee();
-				employee.setId(rs.getInt(1));
-				employee.setLastName(rs.getString(2));
-				employee.setFirstName(rs.getString(3));
+			if (rs.next()) {
+				String name = rs.getString(1);
+				String city = rs.getString(2);
 				
-				list.add(employee);
+				customer = new Customer();
+				customer.setName(name);
+				customer.setCity(city);
 			}
 
 		} catch (Exception e) {
@@ -115,7 +113,7 @@ public class JDBC12Servlet extends HttpServlet {
 			}
 		}
 
-		return list;
+		return customer;
 
 	}
 

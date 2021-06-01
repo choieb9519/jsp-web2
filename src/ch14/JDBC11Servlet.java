@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ch14.bean.Employee;
-
 /**
  * Servlet implementation class JDBC11Servlet
  */

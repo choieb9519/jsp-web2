@@ -17,9 +17,12 @@
 <%
 Page p = new Page(3, 10);
 request.setAttribute("page", p);
+
 Object o = request.getAttribute("page");
 //System.out.println(o == p);
+
 Page p2 = (Page) o;
+
 int s = p2.getStart();
 int e = p2.getEnd();
 System.out.println(s);

@@ -7,6 +7,7 @@
 <%
 //String startStr = request.getParameter("start");
 //String endStr = request.getParameter("end");
+
 Page p = (Page) request.getAttribute("page");
 int start = p.getStart();
 int end = p.getEnd();

@@ -24,9 +24,13 @@
 	</form>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
 
 
 
+=======
+</html>
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web.git

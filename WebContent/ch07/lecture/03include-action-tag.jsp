@@ -16,7 +16,7 @@
 	<h1>03 include </h1>
 
 	<jsp:include page="04include-action-tag.jsp"></jsp:include>
-	
+	           <!-- 필수attribute가 page -->
 	<h1>03 include </h1>
 </div>
 </body>

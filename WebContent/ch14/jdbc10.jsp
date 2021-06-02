@@ -20,6 +20,7 @@
 	${customer.city }에 사는 ${customer.name }님 반갑습니다.
 </div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
@@ -27,3 +28,6 @@
 
 
 
+=======
+</html>
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web.git

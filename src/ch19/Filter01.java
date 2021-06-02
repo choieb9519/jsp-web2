@@ -1,4 +1,4 @@
-package ch19.lecture;
+package ch19;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -10,15 +10,15 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 /**
- * Servlet Filter implementation class Filter04
+ * Servlet Filter implementation class Filter01
  */
-@WebFilter("/filter04")
-public class Filter04 implements Filter {
+@WebFilter("/Filter01") //요청 온 곳
+public class Filter01 implements Filter {
 
     /**
      * Default constructor. 
      */
-    public Filter04() {
+    public Filter01() {
         // TODO Auto-generated constructor stub
     }
 
@@ -33,18 +33,13 @@ public class Filter04 implements Filter {
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
-
-		System.out.println("filter04 filter...");
+		// 서블릿 또는 jsp에게 요청이 오기 전에 해야 하는 일을 작성
+		// 다음 서블릿이 누구인지 chain이 알고 있음
 		
-		String name = request.getParameter("name");
+		System.out.println("filter01 dofilter method...");
 		
-		if (name != null) {
-			chain.doFilter(request, response);
-		}else {
-			response.getWriter().print("have no name");
-		}
+		// pass the request along the filter chain
+		chain.doFilter(request, response);
 	}
 
 	/**

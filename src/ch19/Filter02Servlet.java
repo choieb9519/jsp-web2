@@ -1,4 +1,4 @@
-package ch19.lecture;
+package ch19;
 
 import java.io.IOException;
 import java.io.PrintWriter;

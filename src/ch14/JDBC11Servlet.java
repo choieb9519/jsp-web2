@@ -13,8 +13,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
 import ch14.bean.Employee;
 
+=======
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web.git
 /**
  * Servlet implementation class JDBC11Servlet
  */

@@ -17,6 +17,7 @@
 </head>
 <body>
 <div class="container">
+<<<<<<< HEAD
 	<table class="table">
 		<thead>
 			<tr>
@@ -43,6 +44,16 @@
 
 
 
+=======
+	<ul>
+		<c:forEach items="${employees }" var="emp" >
+			<li>${emp.id } : ${emp.lastName }, ${emp.firstName }</li>	
+		</c:forEach>
+	</ul>
+</div>
+</body>
+</html>
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web.git
 
 
 

@@ -20,6 +20,7 @@
 	<h1>${name }님 조회 완료</h1>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
@@ -28,3 +29,6 @@
 
 
 
+=======
+</html>
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web.git

@@ -1,4 +1,4 @@
-package ch19.lecture;
+package ch19;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -10,15 +10,15 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 /**
- * Servlet Filter implementation class Filter02
+ * Servlet Filter implementation class Filter0301
  */
-//@WebFilter("/Filter02")
-public class Filter02 implements Filter {
+//@WebFilter("/Filter0301")
+public class Filter0301 implements Filter {
 
     /**
      * Default constructor. 
      */
-    public Filter02() {
+    public Filter0301() {
         // TODO Auto-generated constructor stub
     }
 
@@ -36,7 +36,7 @@ public class Filter02 implements Filter {
 		// TODO Auto-generated method stub
 		// place your code here
 		
-		System.out.println("filter02 doFilter method...");
+		System.out.println("filter0301...");
 		
 		// pass the request along the filter chain
 		chain.doFilter(request, response);

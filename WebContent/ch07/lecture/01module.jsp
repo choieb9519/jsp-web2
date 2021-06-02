@@ -5,6 +5,7 @@
 <head>
 
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
+<!-- 서버 내에서는 contextroot가 필요 없음 -->
 
 <title>Insert title here</title>
 </head>

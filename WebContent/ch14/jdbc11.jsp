@@ -20,7 +20,11 @@
 	${emp.id }번 직원은 ${emp.lastName }, ${emp.firstName }입니다. 
 </div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
 
+=======
+</html>
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web.git

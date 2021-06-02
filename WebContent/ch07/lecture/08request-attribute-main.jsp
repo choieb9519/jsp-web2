@@ -16,15 +16,12 @@
 <div class="container">
 	<%
 	User user = new User("donald", 22, "us");
-	// 코드 추가
 	request.setAttribute("member", user);
-	
 	%>
 	
 	<h1>유저 정보</h1>
 	
 	<jsp:include page="08request-attribute-sub.jsp"></jsp:include>
-	
 	
 </div>
 </body>

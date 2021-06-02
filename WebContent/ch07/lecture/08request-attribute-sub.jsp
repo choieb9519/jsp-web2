@@ -3,12 +3,12 @@
 <%@ page import="ch07.User" %>
 
 <%
-User member = (User) request.getAttribute("member"); // 코드 수정
+User member = (User) request.getAttribute("member");
+			//강제형변환
 %>
 
 <div>
 	이름 : <%= member.getName() %> <br>
 	나이 : <%= member.getAge() %> <br>
 	주소 : <%= member.getAddress() %> <br>
-
 </div>

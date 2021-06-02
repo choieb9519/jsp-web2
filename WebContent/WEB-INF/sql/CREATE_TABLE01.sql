@@ -1,0 +1,22 @@
+CREATE TABLE MyTable1 (
+	Col1 INT
+);
+
+DESC MyTable1;
+
+INSERT INTO MyTable1
+(Col1)
+VALUES (999);
+
+INSERT INTO MyTable1
+(Col1)
+VALUES (888);
+
+SELECT * FROM MyTable1;
+
+DELETE FROM MyTable1
+WHERE Col1 = 888;
+
+UPDATE MyTable1
+set Col1 = 777
+where Col1 = 888;

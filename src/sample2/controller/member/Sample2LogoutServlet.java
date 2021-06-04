@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Sample2LogoutServlet
  */
-@WebServlet("/sample2/logout")
+@WebServlet("/sample2/mamber/logout")
 public class Sample2LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,7 +30,7 @@ public class Sample2LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		String path = request.getContextPath() + "/sample2/main";
+		String path = request.getContextPath() + "/sample2/mamber/main";
 		response.sendRedirect(path);
 	}
 

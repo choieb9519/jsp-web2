@@ -13,19 +13,24 @@
 <title>Insert title here</title>
 </head>
 <body>
+<s2:navbar></s2:navbar>
 <div class="container">
-   <form action="${pageContext.request.contextPath }/sample2/signup" method="post">
-   	id : <br>
-   	<input type="text" name="id"> <br>
-   	pw : <br>
-   	<input type="password" name="password"> <br>
-   	name : <br>
-   	<input type="text" name="name"> <br>
-   	birth : <br>
-   	<input type="date" name="birth"> <br>
-   	
-   	<input type="submit" name="가입">
+   <h1>로그인</h1>
+
+   <form method="post" action="${pageContext.request.contextPath }/sample2/mamber/login">
+   		id <br>
+   		<input type="text" name="id"><br>
+   		pw <br>
+   		<input type="password" name="password"><br>
+   		
+   		<input type="submit" name="로그인"><br>
    </form>
+   
+	<c:if test= "${not empty message }" ></c:if>
+   <div>
+   		${message }
+   </div>
+   
 </div>
 </body>
 </html>

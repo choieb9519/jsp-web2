@@ -15,7 +15,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2SignUpSelvet
  */
-@WebServlet("/sample2/signup")
+@WebServlet("/sample2/mamber/signup")
 public class Sample2SignUpSelvet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,7 +31,7 @@ public class Sample2SignUpSelvet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/sample2/signup.jsp";
+		String path = "/WEB-INF/sample2/mamber/signup.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -60,10 +60,10 @@ public class Sample2SignUpSelvet extends HttpServlet {
 				
 		// forward or redirect
 		if (ok) {
-			String path = request.getContextPath() + "/sample2/main";
+			String path = request.getContextPath() + "/sample2/mamber/main";
 			response.sendRedirect(path);
 		} else {
-			String path = "/WEB-INF/sample2/signup.jsp";
+			String path = "/WEB-INF/sample2/mamber/signup.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 				}
 			}

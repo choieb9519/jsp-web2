@@ -25,7 +25,7 @@
 <body>
 <s2:navbar></s2:navbar>
 <div class="container">
-   <form id="form1" action="${pageContext.request.contextPath }/sample2/modify" method="post">
+   <form id="form1" action="${pageContext.request.contextPath }/sample2/mamber/modify" method="post">
    
    	id : <br>
    	<input id="input1" type="text" name="id" value="${member.id }" readonly> <br>

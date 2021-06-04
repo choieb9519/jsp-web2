@@ -40,7 +40,7 @@ public class Sample2ListServlet extends HttpServlet {
 		request.setAttribute("members", list);
 		
 		// forward
-		String path = "/WEB-INF/sample2/list.jsp";
+		String path = "/WEB-INF/sample2/mamber/list.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 

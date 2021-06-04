@@ -49,7 +49,7 @@ public class Sample2LoginServlet extends HttpServlet {
 		if (member != null && member.getPassword().equals(password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userLogined", member);
-			String path = request.getContextPath() + "/sample2/mamber/main";
+			String path = request.getContextPath() + "/sample2/main";
 			response.sendRedirect(path);
 		} else {
 			String path = "/WEB-INF/sample2/mamber/login.jsp";

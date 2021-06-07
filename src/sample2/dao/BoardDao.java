@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sample2.bean.Board;
+import sample2.bean.BoardDto;
 
 public class BoardDao {
 	
@@ -18,7 +19,7 @@ public class BoardDao {
 	private String password;
 	
 	public BoardDao() {
-		this.url = "jdbc:mysql://13.125.118.27/test2";
+		this.url = "jdbc:mysql://3.35.141.156/test2";
 		this.user = "root";
 		this.password = "wnddkdwjdqhcjfl1";
 		
@@ -74,6 +75,39 @@ public class BoardDao {
 				board.setId(rs.getInt(1));
 				board.setTitle(rs.getString(2));
 				board.setMemberId(rs.getString(3));
+				board.setInserted(rs.getTimestamp(4));
+				
+				list.add(board);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
+	}
+	
+	public List<BoardDto> list2() {
+		List<BoardDto> list = new ArrayList<>();
+		
+		String sql = "SELECT b.id boardId, b.title title, m.name name, b.inserted "
+				+ "FROM Board b "
+				+ "JOIN Member m "
+				+ "ON b.memberId = m.id"
+				+ "ORDER BY boardId DESC "; //최신게시물이 먼저 나오도록 내림차순
+		
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				BoardDto board = new BoardDto();
+				board.setBoardId(rs.getInt(1));
+				board.setTitle(rs.getString(2));
+				board.setMemberName(rs.getString(3));
 				board.setInserted(rs.getTimestamp(4));
 				
 				list.add(board);

@@ -17,7 +17,7 @@
 <div class="container">
 	<h1>${board.boardId }번 글 보기</h1>
 	
-	<form id="form1" action="${pageContext.request.contextPath }/sample2/board/modify" method="post">
+	<form id="form1" action="${pageContext.request.contextPath }/sample2/comment/add" method="post">
 	
 	
 	제목 : <br>

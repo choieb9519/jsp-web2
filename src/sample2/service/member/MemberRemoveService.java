@@ -34,12 +34,3 @@ public class MemberRemoveService {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-

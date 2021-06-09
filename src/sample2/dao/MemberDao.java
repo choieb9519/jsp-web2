@@ -17,18 +17,17 @@ public class MemberDao {
 	private String password;
 	
 	public MemberDao() {
-		this.url = "jdbc:mysql://3.35.141.156/practice";
+		this.url = "jdbc:mysql://13.125.118.27/test2";
 		this.user = "root";
 		this.password = "wnddkdwjdqhcjfl1";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public boolean insert(Member member) {
 		String sql = "INSERT INTO Member "
 				+ "(id, password, name, birth, inserted) "
@@ -39,6 +38,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		
 		try {
+
 			con = DriverManager.getConnection(url, user, password);
 			pstmt = con.prepareStatement(sql);
 			
@@ -167,7 +167,7 @@ public class MemberDao {
 			
 			int cnt = pstmt.executeUpdate();
 			
-			if (cnt > 0) {  //중복되는 아이디 없게하기
+			if (cnt > 0) { //중복되는 아이디 없게하기
 				return true;
 			}
 			//지금은 동일하게 중복된 아이디가 있어서 
@@ -196,13 +196,12 @@ public class MemberDao {
 		
 		return false;
 	}
-	
-	public void remove(String id) {
+
+	public void remove(String id, Connection con) {
 
 		String sql = "DELETE FROM Member WHERE id = ?";
 		
 		try (
-			Connection con = DriverManager.getConnection(url, user, password);
 			PreparedStatement pstmt = con.prepareStatement(sql);
 				) {
 			
@@ -213,7 +212,7 @@ public class MemberDao {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public boolean existsId(String id) {
 		String sql = "SELECT id FROM Member WHERE id = ?";
 		
@@ -242,11 +241,6 @@ public class MemberDao {
 		}
 		
 		return false;
-	}
-
-	public void remove(String id, Connection con) {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }

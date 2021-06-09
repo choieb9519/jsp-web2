@@ -64,14 +64,3 @@ public class Sample2BoardWriteServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-

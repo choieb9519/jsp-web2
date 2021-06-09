@@ -19,7 +19,7 @@ public class BoardDao {
 	private String password;
 	
 	public BoardDao() {
-		this.url = "jdbc:mysql://13.125.118.27/test2";
+		this.url = "jdbc:mysql://3.35.141.156/test2";
 		this.user = "root";
 		this.password = "wnddkdwjdqhcjfl1";
 		
@@ -274,20 +274,3 @@ public class BoardDao {
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

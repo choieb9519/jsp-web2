@@ -57,13 +57,3 @@ public class Sample2BoardRemoveServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-

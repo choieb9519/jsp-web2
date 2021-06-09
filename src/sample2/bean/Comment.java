@@ -2,14 +2,22 @@ package sample2.bean;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 
-public class Board {
+public class Comment {
+
 	private int id;
-	private String title;
-	private String body;
 	private String memberId;
+	private int boardId;
+	private String comment;
 	private Timestamp inserted;
+	private String memberName;
+	
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
 	
 	public String getTimeAgo() {
 		long now = System.currentTimeMillis();
@@ -28,33 +36,29 @@ public class Board {
 		}
 	}
 	
-	public String getMemberIdHidden() {
-		return memberId.substring(0, 1) + "******";
-	}
-	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getBody() {
-		return body;
-	}
-	public void setBody(String body) {
-		this.body = body;
-	}
 	public String getMemberId() {
 		return memberId;
 	}
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+	}
+	public int getBoardId() {
+		return boardId;
+	}
+	public void setBoardId(int boardId) {
+		this.boardId = boardId;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	public Timestamp getInserted() {
 		return inserted;

@@ -78,19 +78,5 @@ public class Sample2BoardModifyServlet extends HttpServlet {
 				+ "/sample2/board/detail?id=" + boardId;
 		response.sendRedirect(path);
 		
-		
-		
 	}
-
 }
-
-
-
-
-
-
-
-
-
-
-

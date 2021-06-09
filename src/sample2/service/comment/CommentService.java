@@ -7,7 +7,7 @@ import sample2.bean.Comment;
 import sample2.dao.CommentDao;
 import sample2.util.DBConnection;
 
-public class CommentAddService {
+public class CommentService {
 	
 	private static CommentDao dao;
 	
@@ -28,6 +28,13 @@ public class CommentAddService {
 		List<Comment> list = dao.list(boardId, con);
 		
 		return list;
+	}
+
+	public void modify(Comment comment) {
+		Connection con = DBConnection.getConnection();
+		
+		dao.modify(comment, con);
+		
 	}
 	
 }

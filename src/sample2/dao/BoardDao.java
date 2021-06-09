@@ -19,7 +19,7 @@ public class BoardDao {
 	private String password;
 	
 	public BoardDao() {
-		this.url = "jdbc:mysql://3.35.141.156/test2";
+		this.url = "jdbc:mysql://3.35.141.156/practice";
 		this.user = "root";
 		this.password = "wnddkdwjdqhcjfl1";
 		
@@ -166,10 +166,10 @@ public class BoardDao {
 	}
 	
 	public BoardDto get2(int id) {
-		String sql = "SELECT b.id boardId,"
-				+ "          b.title title,"
-				+ "          b.body body,"
-				+ "          m.name memberName,"
+		String sql = "SELECT b.id boardId, "
+				+ "          b.title title, "
+				+ "          b.body body, "
+				+ "          m.name memberName, "
 				+ "          m.id memberID, "
 				+ "          b.inserted "
 				+ "FROM Board b JOIN Member m ON b.memberId = m.id "

@@ -12,25 +12,23 @@ import sample2.bean.Comment;
 import sample2.service.comment.CommentService;
 
 /**
- * Servlet implementation class Sample2CommentAddServlet
+ * Servlet implementation class Sample2CommentModifyServlet
  */
-@WebServlet("/sample2/comment/add")
-public class Sample2CommentAddServlet extends HttpServlet {
+@WebServlet("/sample2/comment/modify")
+public class Sample2CommentModifyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private CommentService service;
        
+	private CommentService service;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sample2CommentAddServlet() {
+    public Sample2CommentModifyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
     
     @Override
     public void init() throws ServletException {
-    	// TODO Auto-generated method stub
     	super.init();
     	service = new CommentService();
     }
@@ -47,22 +45,18 @@ public class Sample2CommentAddServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 파라미터 수집
-		String comment = request.getParameter("comment");
-		String memberId = request.getParameter("memberId");
+		String idStr = request.getParameter("commentId");
+		String commentStr = request.getParameter("comment");
 		String boardId = request.getParameter("boardId");
 		
-		// 빈 생성 및 프로퍼티 세팅
-		Comment commentBean = new Comment();
+		int id = Integer.parseInt(idStr);
 		
-		commentBean.setComment(comment);
-		commentBean.setMemberId(memberId);
-		commentBean.setBoardId(Integer.parseInt(boardId));
+		Comment comment = new Comment();
+		comment.setId(id);
+		comment.setComment(commentStr);
 		
-		// 서비스에게 일 시킴
-		service.add(commentBean);
+		service.modify(comment);
 		
-		// view에 전송(forward) 또는 redirect
 		String path = request.getContextPath() + "/sample2/board/detail?id=" + boardId;
 		response.sendRedirect(path);
 	}

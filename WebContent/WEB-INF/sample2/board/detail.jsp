@@ -17,7 +17,7 @@
 <div class="container">
 	<h1>${board.boardId }번 글 보기</h1>
 	
-	<form id="form1" action="${pageContext.request.contextPath }/sample2/comment/add" method="post">
+	<form id="form1" action="${pageContext.request.contextPath }/sample2/board/modify" method="post">
 	
 	
 	제목 : <br>
@@ -67,18 +67,18 @@
 
 <c:if test="${not empty sessionScope.userLogined }">
 <div class="container mt-5">
-	<form action="${pageContext.request.contextPath }/comment/add" method="post">
-		<textarea name="comment" ></textarea>
+	<form action="${pageContext.request.contextPath }/sample2/comment/add" method="post">
+		<textarea name="comment"></textarea>
 		<br>
-		<input name="memberId" value="${session.userLogined.id }" readonly>
+		<input hidden name="memberId" value="${sessionScope.userLogined.id }" readonly>
 		<br>
-		<input name="boarId" value="${board.boardId }"readonly>
+		<input hidden name="boardId" value="${board.boardId }" readonly>
 		<br>
 		<input type="submit" value="댓글작성">
 	</form>
 </div>
-</c:if>
 
+</c:if>
 <div class="container mt-5">
 	<c:forEach items="${comments }" var="comment">
 		<script>
@@ -101,6 +101,7 @@
 			      action="${pageContext.request.contextPath }/sample2/comment/modify"
 			      method="post">
 			    <input name="commentId" value="${comment.id }" hidden />
+			    <input name="boardId" value="${board.boardId }" hidden />
 				<textarea name="comment" readonly>${comment.comment }</textarea>
 				<span>${comment.memberName }</span>
 				<span>${comment.timeAgo }</span>

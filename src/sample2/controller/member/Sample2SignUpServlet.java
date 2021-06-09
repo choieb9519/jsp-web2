@@ -68,13 +68,4 @@ public class Sample2SignUpServlet extends HttpServlet {
 			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}
-
 }
-
-
-
-
-
-
-
-

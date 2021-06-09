@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import sample2.bean.BoardDto;
 import sample2.bean.Comment;
 import sample2.dao.BoardDao;
-import sample2.service.comment.CommentAddService;
+import sample2.service.comment.CommentService;
 
 
 /**
@@ -22,7 +22,7 @@ import sample2.service.comment.CommentAddService;
 public class Sample2BoardDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	private CommentAddService commentSerivce;
+	private CommentService commentSerivce;
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,7 +35,7 @@ public class Sample2BoardDetailServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
     	super.init();
-    	this.commentSerivce = new CommentAddService();
+    	this.commentSerivce = new CommentService();
     	
     }
 

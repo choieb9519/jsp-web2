@@ -35,8 +35,9 @@ $(document).ready(function() {
 
 </head>
 <body>
+<s2:navbar/>
 <div class="container">
-   <form action="${pageContext.request.contextPath }/sample2/signup" method="post">
+   <form action="${pageContext.request.contextPath }/sample2/member/signup" method="post">
    	id : <br>
 		<input type="text" name="id" id="input1" >
 		<button id="button1" type="button">중복확인</button>

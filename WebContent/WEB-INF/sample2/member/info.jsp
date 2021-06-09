@@ -16,9 +16,21 @@
 	$(document).ready(function() {
 		$("#button1").click(function() {
 			$("#input2, #input3, #input4").removeAttr("readonly");
-			$("submit1").removeAttr("hidden");
+			$("#submit1").removeAttr("hidden");
 		});
-	})
+		
+		$("#submit2").click(function(e) {
+			e.preventDefault();
+			console.log("submit2 clicked...");
+			
+			var con = confirm("탈퇴 하시겠습니까?");
+			console.log(con);
+			
+			if (con) {
+				$("#form2").submit();
+			}
+		});
+	});
 </script>
 
 </head>
@@ -47,6 +59,13 @@
 	   		${message }
 	   </div>
    </c:if>
+</div>   
+
+<div class="container">
+	<form id="form2" action="${pageContext.request.contextPath}/sample2/remove" method="post">
+		<input id="submit2" type="submit" value="탈퇴">
+	</form>
 </div>
+
 </body>
 </html>

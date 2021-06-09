@@ -7,3 +7,4 @@ CREATE TABLE Member (
     birth DATE,
     inserted TIMESTAMP
 );
+SELECT * FROM Member;

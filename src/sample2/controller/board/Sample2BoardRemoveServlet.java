@@ -1,7 +1,6 @@
-package sample2.controller;
+package sample2.controller.board;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,20 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sample2.bean.Member;
-import sample2.dao.MemberDao;
+import sample2.dao.BoardDao;
 
 /**
- * Servlet implementation class Sample2modifyServlet
+ * Servlet implementation class Sample2BoardRemove
  */
-@WebServlet("/sample2/modify")
-public class Sample2modifyServlet extends HttpServlet {
+@WebServlet("/sample2/board/remove")
+public class Sample2BoardRemoveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sample2modifyServlet() {
+    public Sample2BoardRemoveServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,33 +37,33 @@ public class Sample2modifyServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		String boardId = request.getParameter("boardId");
 		
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		String name = request.getParameter("name");
-		String birth = request.getParameter("birth");
-		
-		Member member = new Member();
-		member.setId(id);
-		member.setPassword(password);
-		member.setName(name);
-		member.setBirth(Date.valueOf(birth));
-		
-		MemberDao dao = new MemberDao();
-		boolean ok =dao.update(member);
-		
-		String message = "";
+		BoardDao dao = new BoardDao();
+		boolean ok = dao.remove(Integer.parseInt(boardId));
+	
+		// forward or redirect
 		if (ok) {
-			message = "변경 완료";
+			request.getSession().setAttribute("message", "게시물이 삭제되었습니다.");
+			
+			String path = request.getContextPath() + "/sample2/board/list";
+			response.sendRedirect(path);
 		} else {
-			message = "변경 실패";
+			request.getSession().setAttribute("message", "게시물이 삭제되지 않았습니다.");
+					
+			String path = request.getContextPath() + "/sample2/board/detail?id=" + boardId;
+			response.sendRedirect(path);
 		}
-		
-		request.setAttribute("message", message);
-		
-		String path = "/WEB-INF/sample2/info.jsp";
-		request.getRequestDispatcher(path).forward(request, response);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+

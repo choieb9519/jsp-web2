@@ -1,6 +1,7 @@
-package sample2.controller;
+package sample2.controller.member;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +15,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2InfoServlet
  */
-@WebServlet("/sample2/info")
+@WebServlet("/sample2/member/info")
 public class Sample2InfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,18 +34,19 @@ public class Sample2InfoServlet extends HttpServlet {
 		HttpSession session = request.getSession(); //로그인 한 사람만 접근하도록
 		Member member = (Member) session.getAttribute("userLogined");
 		
-		if( member != null) {
+		if (member != null) {
 			MemberDao dao = new MemberDao();
 			Member mem = dao.getMember(member.getId());
 			
 			request.setAttribute("member", mem);
-	
-			String path = "/WEB-INF/sample2/info.jsp";
+			
+			String path = "/WEB-INF/sample2/member/info.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 		} else {
 			String path = request.getContextPath() + "/sample2/main";
 			response.sendRedirect(path);
 		}
+		
 	}
 
 	/**
@@ -56,3 +58,7 @@ public class Sample2InfoServlet extends HttpServlet {
 	}
 
 }
+
+
+
+

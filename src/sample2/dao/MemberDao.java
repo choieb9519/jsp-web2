@@ -170,6 +170,10 @@ public class MemberDao {
 			if (cnt > 0) {  //중복되는 아이디 없게하기
 				return true;
 			}
+			//지금은 동일하게 중복된 아이디가 있어서 
+			//하나의 아이디를 변경하게 되면 
+			//다른 중복 아이디를 가진 data도 수정되어서 
+			//1이상의 수가 나와서 그래요
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -191,6 +195,58 @@ public class MemberDao {
 		}
 		
 		return false;
+	}
+	
+	public void remove(String id) {
+
+		String sql = "DELETE FROM Member WHERE id = ?";
+		
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean existsId(String id) {
+		String sql = "SELECT id FROM Member WHERE id = ?";
+		
+		ResultSet rs = null;
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return false;
+	}
+
+	public void remove(String id, Connection con) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

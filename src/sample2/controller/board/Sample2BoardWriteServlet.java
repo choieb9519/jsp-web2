@@ -64,3 +64,17 @@ public class Sample2BoardWriteServlet extends HttpServlet {
 	}
 
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

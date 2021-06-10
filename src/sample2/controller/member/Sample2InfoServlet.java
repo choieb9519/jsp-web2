@@ -16,7 +16,11 @@ import sample2.service.member.MemberService;
 /**
  * Servlet implementation class Sample2InfoServlet
  */
+<<<<<<< HEAD:src/sample2/controller/member/Sample2InfoServlet.java
 @WebServlet("/sample2/member/info")
+=======
+@WebServlet("/sample2/mamber/info")
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/Sample2InfoServlet.java
 public class Sample2InfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,8 +54,13 @@ public class Sample2InfoServlet extends HttpServlet {
 			Member mem = service.getMember(member.getId());
 			
 			request.setAttribute("member", mem);
+<<<<<<< HEAD:src/sample2/controller/member/Sample2InfoServlet.java
 			
 			String path = "/WEB-INF/sample2/member/info.jsp";
+=======
+	
+			String path = "/WEB-INF/sample2/mamber/info.jsp";
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/Sample2InfoServlet.java
 			request.getRequestDispatcher(path).forward(request, response);
 		} else {
 			String path = request.getContextPath() + "/sample2/main";

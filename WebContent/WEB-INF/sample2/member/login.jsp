@@ -17,7 +17,11 @@
 <div class="container">
    <h1>로그인</h1>
 
+<<<<<<< HEAD:WebContent/WEB-INF/sample2/member/login.jsp
    <form method="post" action="${pageContext.request.contextPath }/sample2/member/login">
+=======
+   <form method="post" action="${pageContext.request.contextPath }/sample2/mamber/login">
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:WebContent/WEB-INF/sample2/login.jsp
    		id <br>
    		<input type="text" name="id"><br>
    		pw <br>

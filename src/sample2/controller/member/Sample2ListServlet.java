@@ -15,7 +15,11 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2ListServlet
  */
+<<<<<<< HEAD:src/sample2/controller/member/Sample2ListServlet.java
 @WebServlet("/sample2/member/list")
+=======
+@WebServlet("/sample2/mamber/list")
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/Sample2ListServlet.java
 public class Sample2ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,7 +44,11 @@ public class Sample2ListServlet extends HttpServlet {
 		request.setAttribute("members", list);
 		
 		// forward
+<<<<<<< HEAD:src/sample2/controller/member/Sample2ListServlet.java
 		String path = "/WEB-INF/sample2/member/list.jsp";
+=======
+		String path = "/WEB-INF/sample2/mamber/list.jsp";
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/Sample2ListServlet.java
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	

@@ -1,13 +1,17 @@
 package sample2.bean;
 
 import java.sql.Timestamp;
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
+=======
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 
 public class BoardDto {
 	private int boardId;
 	private String title;
 	private String body;
 	private String memberName;
+<<<<<<< HEAD
 	private String memberId;
 	private int numberOfComment;
 	private Timestamp inserted;
@@ -26,6 +30,10 @@ public class BoardDto {
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
+=======
+	private Timestamp inserted;
+	
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 	public int getBoardId() {
 		return boardId;
 	}
@@ -57,6 +65,7 @@ public class BoardDto {
 		this.inserted = inserted;
 	}
 	
+<<<<<<< HEAD
 	public String getTimeAgo() {
 		long now = System.currentTimeMillis();
 		long inserted = this.inserted.getTime();
@@ -74,3 +83,7 @@ public class BoardDto {
 		}
 	}
 }
+=======
+	
+}
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

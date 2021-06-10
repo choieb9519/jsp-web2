@@ -11,51 +11,21 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<script>
-var url = "${pageContext.request.contextPath}" + "/sample2/member/checkdup";
-$(document).ready(function() {
-	$("#button1").click(function() {
-		var id = $("#input1").val();
-		
-		$.post(url, {id: id}, function(data) {
-			if (data == 'ok') {
-				// 가입 가능 메세지
-				// console.log("ok");
-				$("#span1").text("사용 가능");
-			} else {
-				// 가입 불가능 메세지
-				// console.log("not ok");
-				$("#span1").text("사용 불가능");
-			}
-		});
-	});
-});
-</script>
-
 </head>
 <body>
-<s2:navbar/>
 <div class="container">
-   <form action="${pageContext.request.contextPath }/sample2/member/signup" method="post">
+   <form action="${pageContext.request.contextPath }/sample2/mamber/signup" method="post">
    	id : <br>
-		<input type="text" name="id" id="input1" >
-		<button id="button1" type="button">중복확인</button>
-		<span id="span1"></span>
-		 <br>
-		pw : <br>
-		<input type="password" name="password"> <br>
-		name : <br>	
-		<input type="text" name="name"> <br>
-		birth day: <br>
-		<input type="date" name="birth"> <br>
-		gender : <br>
-		<input type="text" name="gender"> <br>
-		
-		<input type="submit" value="가입">
-	</form>
-
-	<s2:message></s2:message>	
+   	<input type="text" name="id"> <br>
+   	pw : <br>
+   	<input type="password" name="password"> <br>
+   	name : <br>
+   	<input type="text" name="name"> <br>
+   	birth : <br>
+   	<input type="date" name="birth"> <br>
+   	
+   	<input type="submit" name="가입">
+   </form>
 </div>
 </body>
 </html>

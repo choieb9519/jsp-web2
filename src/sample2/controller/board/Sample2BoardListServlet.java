@@ -32,6 +32,7 @@ public class Sample2BoardListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDao dao = new BoardDao();
+<<<<<<< HEAD
 //		List<Board> boardList = dao.list();
 //		List<BoardDto> boardList = dao.list2();
 		List<BoardDto> boardList = dao.list3();
@@ -39,6 +40,11 @@ public class Sample2BoardListServlet extends HttpServlet {
 		
 		request.setAttribute("boards", boardList);
 		request.setAttribute("totalNum", total);
+=======
+		List<BoardDto> boardList = dao.list2();
+		
+		request.setAttribute("boards", boardList);
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 		
 		String path = "/WEB-INF/sample2/board/list.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
@@ -53,4 +59,8 @@ public class Sample2BoardListServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

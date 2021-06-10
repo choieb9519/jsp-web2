@@ -16,8 +16,13 @@
 <s2:navbar></s2:navbar>
 <div class="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<h1>글 목록<small class="text-muted">[${totalNum }]</small></h1>
 	<s2:message></s2:message>
+=======
+	<h1>글 목록</h1>
+	
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 =======
 	<h1>글 목록</h1>
 	
@@ -38,6 +43,7 @@
 					<td>${board.boardId }</td>
 					<td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 						<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.boardId}">
 							${board.title }
 						</a>
@@ -45,6 +51,11 @@
 						<c:if test="${board.numberOfComment != 0 }">
 						 <span>[${board.numberOfComment }]</span>
 						</c:if> 
+=======
+						<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.id}">
+							${board.title }
+						</a>
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 =======
 						<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.id}">
 							${board.title }
@@ -59,10 +70,13 @@
 	</table>
 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 </body>
 </html>
 =======
+=======
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 </body>
 </html>
 
@@ -73,4 +87,7 @@
 
 
 
+<<<<<<< HEAD
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
+=======
 >>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

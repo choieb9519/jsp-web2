@@ -38,7 +38,11 @@
 <s2:navbar></s2:navbar>
 <div class="container">
 <<<<<<< HEAD:WebContent/WEB-INF/sample2/member/info.jsp
+<<<<<<< HEAD:WebContent/WEB-INF/sample2/member/info.jsp
    <form id="form1" action="${pageContext.request.contextPath }/sample2/member/modify" method="post">
+=======
+   <form id="form1" action="${pageContext.request.contextPath }/sample2/mamber/modify" method="post">
+>>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:WebContent/WEB-INF/sample2/info.jsp
 =======
    <form id="form1" action="${pageContext.request.contextPath }/sample2/mamber/modify" method="post">
 >>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:WebContent/WEB-INF/sample2/info.jsp

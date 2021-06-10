@@ -15,13 +15,8 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2ModifyServlet
  */
-<<<<<<< HEAD:src/sample2/controller/member/Sample2ModifyServlet.java
 @WebServlet("/sample2/member/modify")
 public class Sample2ModifyServlet extends HttpServlet {
-=======
-@WebServlet("/sample2/mamber/modify")
-public class Sample2modifyServlet extends HttpServlet {
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/member/Sample2modifyServlet.java
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -72,11 +67,7 @@ public class Sample2modifyServlet extends HttpServlet {
 		request.setAttribute("message", message);
 		request.setAttribute("member", member);
 		
-<<<<<<< HEAD:src/sample2/controller/member/Sample2ModifyServlet.java
 		String path = "/WEB-INF/sample2/member/info.jsp";
-=======
-		String path = "/WEB-INF/sample2/mamber/info.jsp";
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/member/Sample2modifyServlet.java
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 }

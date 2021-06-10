@@ -62,10 +62,4 @@ public class Board {
 	public void setInserted(Timestamp inserted) {
 		this.inserted = inserted;
 	}
-	
-	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

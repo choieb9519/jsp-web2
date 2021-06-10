@@ -18,49 +18,43 @@ import sample2.dao.BoardDao;
 @WebServlet("/sample2/board/list")
 public class Sample2BoardListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Sample2BoardListServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Sample2BoardListServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		BoardDao dao = new BoardDao();
-<<<<<<< HEAD
 //		List<Board> boardList = dao.list();
 //		List<BoardDto> boardList = dao.list2();
 		List<BoardDto> boardList = dao.list3();
 		int total = dao.countAll();
-		
+
 		request.setAttribute("boards", boardList);
 		request.setAttribute("totalNum", total);
-=======
-		List<BoardDto> boardList = dao.list2();
-		
-		request.setAttribute("boards", boardList);
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
-		
+
 		String path = "/WEB-INF/sample2/board/list.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

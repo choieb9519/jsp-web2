@@ -127,7 +127,7 @@ public class MemberDao {
 				member.setPassword(rs.getString(2));
 				member.setName(rs.getString(3));
 				member.setBirth(rs.getDate(4));
-				member.setName(rs.getGender(5));
+				member.setName(rs.getString(5));
 				member.setInserted(rs.getTimestamp(6));
 				
 				return member;

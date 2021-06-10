@@ -15,13 +15,8 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2SignUpServlet
  */
-<<<<<<< HEAD:src/sample2/controller/member/Sample2SignUpServlet.java
 @WebServlet("/sample2/member/signup")
 public class Sample2SignUpServlet extends HttpServlet {
-=======
-@WebServlet("/sample2/mamber/signup")
-public class Sample2SignUpSelvet extends HttpServlet {
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/member/Sample2SignUpSelvet.java
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -36,11 +31,7 @@ public class Sample2SignUpSelvet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD:src/sample2/controller/member/Sample2SignUpServlet.java
 		String path = "/WEB-INF/sample2/member/signup.jsp";
-=======
-		String path = "/WEB-INF/sample2/mamber/signup.jsp";
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/member/Sample2SignUpSelvet.java
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -73,13 +64,9 @@ public class Sample2SignUpSelvet extends HttpServlet {
 			String path = request.getContextPath() + "/sample2/member/list";
 			response.sendRedirect(path);
 		} else {
-<<<<<<< HEAD:src/sample2/controller/member/Sample2SignUpServlet.java
 			request.setAttribute("message", "가입 실패");
 			
 			String path = "/WEB-INF/sample2/member/signup.jsp";
-=======
-			String path = "/WEB-INF/sample2/mamber/signup.jsp";
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45:src/sample2/controller/member/Sample2SignUpSelvet.java
 			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}

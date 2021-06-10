@@ -11,10 +11,7 @@ import java.util.List;
 
 import sample2.bean.Board;
 import sample2.bean.BoardDto;
-<<<<<<< HEAD
 import sample2.util.DBConnection;
-=======
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 
 public class BoardDao {
 	
@@ -23,11 +20,7 @@ public class BoardDao {
 	private String password;
 	
 	public BoardDao() {
-<<<<<<< HEAD
 		this.url = "jdbc:mysql://3.35.141.156/practice";
-=======
-		this.url = "jdbc:mysql://3.35.141.156/test2";
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 		this.user = "root";
 		this.password = "wnddkdwjdqhcjfl1";
 		
@@ -99,7 +92,6 @@ public class BoardDao {
 	public List<BoardDto> list2() {
 		List<BoardDto> list = new ArrayList<>();
 		
-<<<<<<< HEAD
 		String sql = "SELECT b.id boardId, "
 				+ "          b.title title,"
 				+ "          m.name name,"
@@ -108,13 +100,6 @@ public class BoardDao {
 				+ "JOIN Member m "
 				+ "ON b.memberId = m.id "
 				+ "ORDER BY boardId DESC ";
-=======
-		String sql = "SELECT b.id boardId, b.title title, m.name name, b.inserted "
-				+ "FROM Board b "
-				+ "JOIN Member m "
-				+ "ON b.memberId = m.id"
-				+ "ORDER BY boardId DESC "; //최신게시물이 먼저 나오도록 내림차순
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 		
 		try (
 			Connection con = DriverManager.getConnection(url, user, password);
@@ -181,7 +166,6 @@ public class BoardDao {
 		return null;
 	}
 	
-<<<<<<< HEAD
 	public BoardDto get2(int id) {
 		String sql = "SELECT b.id boardId, "
 				+ "          b.title title, "
@@ -377,19 +361,3 @@ public class BoardDao {
 		return 0;
 	}
 }
-=======
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

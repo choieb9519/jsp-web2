@@ -1,71 +1,76 @@
 package sample2.bean;
 
 import java.sql.Timestamp;
-<<<<<<< HEAD
+
 import java.text.SimpleDateFormat;
-=======
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
+
 
 public class BoardDto {
 	private int boardId;
 	private String title;
 	private String body;
 	private String memberName;
-<<<<<<< HEAD
+
 	private String memberId;
 	private int numberOfComment;
 	private Timestamp inserted;
 	
-	
-	public int getNumberOfComment() {
-		return numberOfComment;
-	}
-	public void setNumberOfComment(int numberOfComment) {
-		this.numberOfComment = numberOfComment;
-	}
-	
-	public String getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
-	}
-=======
-	private Timestamp inserted;
-	
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 	public int getBoardId() {
 		return boardId;
 	}
+
 	public void setBoardId(int boardId) {
 		this.boardId = boardId;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getBody() {
 		return body;
 	}
+
 	public void setBody(String body) {
 		this.body = body;
 	}
+
 	public String getMemberName() {
 		return memberName;
 	}
+
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+
+	public int getNumberOfComment() {
+		return numberOfComment;
+	}
+
+	public void setNumberOfComment(int numberOfComment) {
+		this.numberOfComment = numberOfComment;
+	}
+
 	public Timestamp getInserted() {
 		return inserted;
 	}
+
 	public void setInserted(Timestamp inserted) {
 		this.inserted = inserted;
 	}
-	
-<<<<<<< HEAD
+
 	public String getTimeAgo() {
 		long now = System.currentTimeMillis();
 		long inserted = this.inserted.getTime();
@@ -83,7 +88,3 @@ public class BoardDto {
 		}
 	}
 }
-=======
-	
-}
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

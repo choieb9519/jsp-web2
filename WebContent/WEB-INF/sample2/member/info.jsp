@@ -15,7 +15,7 @@
 <script>
 	$(document).ready(function() {
 		$("#button1").click(function() {
-			$("#input2, #input3, #input4").removeAttr("readonly");
+			$("#input2, #input3, #input4, #input5").removeAttr("readonly");
 			$("#submit1").removeAttr("hidden");
 		});
 		
@@ -37,7 +37,7 @@
 <body>
 <s2:navbar></s2:navbar>
 <div class="container">
-   <form id="form1" action="${pageContext.request.contextPath }/sample2/modify" method="post">
+   <form id="form1" action="${pageContext.request.contextPath }/sample2/member/modify" method="post">
    
    	id : <br>
    	<input id="input1" type="text" name="id" value="${member.id }" readonly> <br>
@@ -47,6 +47,8 @@
    	<input id="input3" type="text" name="name" value="${member.name }" readonly> <br>
    	birth : <br>
    	<input id="input4" type="date" name="birth" value="${member.birth }" readonly> <br>
+   	gender : <br>
+   	<input id="input5" type="text" name="gender" value="${member.gender }" readonly> <br>
    	
    	<button id="button1" type = "button">수정</button>
    	
@@ -60,6 +62,12 @@
 	   </div>
    </c:if>
 </div>   
+
+<div>
+작성한 게시물 : <span>${member.numberOfBoard }</span>개
+<br>
+작성한 댓글 : <span>${member.numberOfComment }</span>개
+</div>
 
 <div class="container">
 	<form id="form2" action="${pageContext.request.contextPath}/sample2/remove" method="post">

@@ -49,6 +49,8 @@ $(document).ready(function() {
 		<input type="text" name="name"> <br>
 		birth day: <br>
 		<input type="date" name="birth"> <br>
+		gender : <br>
+		<input type="text" name="gender"> <br>
 		
 		<input type="submit" value="가입">
 	</form>

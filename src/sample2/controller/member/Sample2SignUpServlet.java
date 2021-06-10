@@ -45,6 +45,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String birth = request.getParameter("birth");
+		String gender = request.getParameter("gender");
 		
 		// Member bean 완성
 		Member member = new Member();
@@ -52,6 +53,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 		member.setPassword(password);
 		member.setName(name);
 		member.setBirth(Date.valueOf(birth));
+		member.setGender(gender);
 		
 		// dao insert 메소드 호출
 		MemberDao dao = new MemberDao();

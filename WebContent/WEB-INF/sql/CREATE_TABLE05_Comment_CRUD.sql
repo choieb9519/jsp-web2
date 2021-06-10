@@ -7,7 +7,11 @@ CREATE TABLE Comment
 	comment VARCHAR(2047) NOT NULL,
 	memberId VARCHAR(255) NOT NULL,
     boardId INT NOT NULL,
-    insertes TIMESTAMP DEFAULT NOW(),
+    inserted TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY (memberId) REFERENCES Member(id),
     FOREIGN KEY (boardId) REFERENCES Board(id)
 );
+
+SELECT * FROM Member;
+SELECT * FROM Board;
+SELECT * FROM Comment;

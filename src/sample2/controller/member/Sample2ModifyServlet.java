@@ -45,12 +45,14 @@ public class Sample2ModifyServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String birth = request.getParameter("birth");
+		String gender = request.getParameter("gender");
 		
 		Member member = new Member();
 		member.setId(id);
 		member.setPassword(password);
 		member.setName(name);
 		member.setBirth(Date.valueOf(birth));
+		member.setName(gender);
 		
 		MemberDao dao = new MemberDao();
 		boolean ok = dao.update(member);
@@ -68,13 +70,4 @@ public class Sample2ModifyServlet extends HttpServlet {
 		String path = "/WEB-INF/sample2/member/info.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
-
 }
-
-
-
-
-
-
-
-

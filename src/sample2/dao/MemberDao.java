@@ -30,9 +30,9 @@ public class MemberDao {
 
 	public boolean insert(Member member) {
 		String sql = "INSERT INTO Member "
-				+ "(id, password, name, birth, inserted) "
+				+ "(id, password, name, birth, gender, inserted) "
 				+ "VALUES "
-				+ "(?, ?, ?, ?, NOW()) ";
+				+ "(?, ?, ?, ?, ?, NOW()) ";
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -46,6 +46,7 @@ public class MemberDao {
 			pstmt.setString(2, member.getPassword());
 			pstmt.setString(3, member.getName());
 			pstmt.setDate(4, member.getBirth());
+			pstmt.setString(5, member.getGender());
 			
 			int cnt = pstmt.executeUpdate();
 			
@@ -78,7 +79,7 @@ public class MemberDao {
 	public List<Member> list() {
 		List<Member> list = new ArrayList<>();
 		
-		String sql = "SELECT id, password, name, birth, inserted "
+		String sql = "SELECT id, password, name, birth, gender, inserted "
 				+ "FROM Member";
 		
 		try (
@@ -93,7 +94,8 @@ public class MemberDao {
 				member.setPassword(rs.getString(2));
 				member.setName(rs.getString(3));
 				member.setBirth(rs.getDate(4));
-				member.setInserted(rs.getTimestamp(5));
+				member.setGender(rs.getString(5));
+				member.setInserted(rs.getTimestamp(6));
 				
 				list.add(member);
 			}
@@ -106,7 +108,7 @@ public class MemberDao {
 	}
 
 	public Member getMember(String id) {
-		String sql = "SELECT id, password, name, birth, inserted "
+		String sql = "SELECT id, password, name, birth, gender, inserted "
 				+ "FROM Member "
 				+ "WHERE id = ?";
 		
@@ -125,7 +127,8 @@ public class MemberDao {
 				member.setPassword(rs.getString(2));
 				member.setName(rs.getString(3));
 				member.setBirth(rs.getDate(4));
-				member.setInserted(rs.getTimestamp(5));
+				member.setName(rs.getGender(5));
+				member.setInserted(rs.getTimestamp(6));
 				
 				return member;
 			}
@@ -150,6 +153,7 @@ public class MemberDao {
 				+ "SET password = ?, "
 				+ "    name = ?, "
 				+ "    birth = ? "
+				+ "    gender = ? "
 				+ "WHERE id = ? ";
 		
 		Connection con = null;
@@ -164,16 +168,13 @@ public class MemberDao {
 			pstmt.setString(2, member.getName());
 			pstmt.setDate(3, member.getBirth());
 			pstmt.setString(4, member.getId());
+			pstmt.setString(5, member.getGender());
 			
 			int cnt = pstmt.executeUpdate();
 			
-			if (cnt > 0) { //중복되는 아이디 없게하기
+			if (cnt > 0) {
 				return true;
 			}
-			//지금은 동일하게 중복된 아이디가 있어서 
-			//하나의 아이디를 변경하게 되면 
-			//다른 중복 아이디를 가진 data도 수정되어서 
-			//1이상의 수가 나와서 그래요
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -241,6 +242,96 @@ public class MemberDao {
 		}
 		
 		return false;
+	}
+
+	public Member getMember2(String id) {
+		String sql = "SELECT m.id,"
+				+ "          m.password,"
+				+ "          m.name,"
+				+ "          m.birth,"
+				+ "          m.gender,"
+				+ "          m.inserted,"
+				+ "          count(DISTINCT b.id) numberOfBoard,"
+				+ "          count(DISTINCT c.id) numberOfComment "
+				+ "FROM Member m LEFT JOIN Board b ON m.id = b.memberId "
+				+ "     LEFT JOIN Comment c ON m.id = c.memberId "
+				+ "WHERE m.id = ?";
+		
+		ResultSet rs = null;
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getString(1));
+				member.setPassword(rs.getString(2));
+				member.setName(rs.getString(3));
+				member.setBirth(rs.getDate(4));
+				member.setInserted(rs.getTimestamp(5));
+				member.setNumberOfBoard(rs.getInt(6));
+				member.setNumberOfComment(rs.getInt(7));
+				
+				return member;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return null;
+	}
+
+	public Member getMember(String id, Connection con) {
+		String sql = "SELECT id, password, name, birth, gender, inserted "
+				+ "FROM Member "
+				+ "WHERE id = ?";
+		
+		ResultSet rs = null;
+		try (
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getString(1));
+				member.setPassword(rs.getString(2));
+				member.setName(rs.getString(3));
+				member.setBirth(rs.getDate(4));
+				member.setGender(rs.getString(5));
+				member.setInserted(rs.getTimestamp(6));
+				
+				return member;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return null;
 	}
 	
 }

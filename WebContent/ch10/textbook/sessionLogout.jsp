@@ -4,6 +4,7 @@
 <% request.setCharacterEncoding("utf-8"); %>
 
 <% session.invalidate(); %>
+<!-- 세션과 어트리뷰트들이 삭제됨 -->
 <!DOCTYPE html>
 <html>
 <head>

@@ -18,6 +18,7 @@
 <div class="container">
 	<h1>3장의 인덱스 페이지</h1>
 	<img alt="" src="../../pic/forward.png">
+	<!-- 실제 그림 파일을 포함하는게 아님 -->
 </div>
 </body>
 </html>

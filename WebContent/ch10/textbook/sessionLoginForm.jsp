@@ -18,13 +18,13 @@
 			<form action="<%=request.getContextPath() %>/ch10/textbook/sessionLogin.jsp" method="post">
 				<div class="form-group">
 					<label for="input1">
-						아이디 
+						아이디
 					</label>
 					<input type="text" name="id" id="input1" class="form-control">
 				</div>
 				<div class="form-group">
 					<label for="input2">
-						암호 
+						암호
 					</label>
 					<input type="password" name="password" class="form-control" id="input2">
 				</div>

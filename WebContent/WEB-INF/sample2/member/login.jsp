@@ -18,7 +18,6 @@
    <h1>로그인</h1>
 
    <form method="post" action="${pageContext.request.contextPath }/sample2/member/login">
-
    		id <br>
    		<input type="text" name="id"><br>
    		

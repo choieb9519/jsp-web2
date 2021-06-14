@@ -20,8 +20,11 @@
    <form method="post" action="${pageContext.request.contextPath }/sample2/member/login">
 
    		id <br>
+   		
    		<input type="text" name="id"><br>
+   		
    		pw <br>
+   		
    		<input type="password" name="password"><br>
    		
    		<input type="submit" name="로그인"><br>

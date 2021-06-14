@@ -62,25 +62,4 @@ public class Sample2BoardWriteServlet extends HttpServlet {
 			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}
-
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
-=======
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

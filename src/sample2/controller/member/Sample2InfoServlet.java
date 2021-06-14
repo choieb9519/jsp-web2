@@ -69,7 +69,3 @@ public class Sample2InfoServlet extends HttpServlet {
 	}
 
 }
-
-
-
-

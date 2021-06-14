@@ -6,6 +6,7 @@
 Cookie cookie = new Cookie("my-cookie", "my-value");
 cookie.setMaxAge(0);
 response.addCookie(cookie);
+//실제 쿠키는 브라우저에 저장되어 있으니까 응답까지 작성
 %>
 
 <!DOCTYPE html>

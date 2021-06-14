@@ -5,7 +5,7 @@
 
 <%
 Cookie cookie = new Cookie("my-cookie9", "my-value9");
-cookie.setPath(request.getContextPath());
+cookie.setPath(request.getContextPath()); //루트경로
 response.addCookie(cookie);
 %>
 

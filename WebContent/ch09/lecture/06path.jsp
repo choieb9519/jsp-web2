@@ -20,7 +20,7 @@ response.addCookie(cookie);
 </head>
 <body>
 <div class="container">
-   <h1> cookie path </h1>
+   <h1>cookie path</h1>
 </div>
 </body>
 </html>

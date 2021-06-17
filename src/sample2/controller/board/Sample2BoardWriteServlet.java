@@ -62,5 +62,8 @@ public class Sample2BoardWriteServlet extends HttpServlet {
 			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/choieb9519/jsp-web2.git
 }

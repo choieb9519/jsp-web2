@@ -5,7 +5,7 @@
 
 <%
 Cookie cookie = new Cookie("my-cookie9", "my-value9");
-cookie.setPath(request.getContextPath());
+cookie.setPath(request.getContextPath()); //루트경로
 response.addCookie(cookie);
 %>
 
@@ -20,7 +20,7 @@ response.addCookie(cookie);
 </head>
 <body>
 <div class="container">
-   <h1> cookie path </h1>
+   <h1>cookie path</h1>
 </div>
 </body>
 </html>

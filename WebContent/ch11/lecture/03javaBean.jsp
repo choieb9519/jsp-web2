@@ -36,9 +36,3 @@ pageContext.setAttribute("title", "writer");
 </div>
 </body>
 </html>
-
-
-
-
-
-

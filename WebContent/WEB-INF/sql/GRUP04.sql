@@ -1,5 +1,5 @@
 USE practice;
-
+SELECT * from Member;
 SELECT * FROM Board
 ORDER BY id DESC;
 

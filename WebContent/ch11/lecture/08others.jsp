@@ -25,10 +25,3 @@ pageContext.setAttribute("myReq", request);
 </div>
 </body>
 </html>
-
-
-
-
-
-
-

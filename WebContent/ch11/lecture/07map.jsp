@@ -37,10 +37,3 @@ pageContext.setAttribute("python", "js");
 </div>
 </body>
 </html>
-
-
-
-
-
-
-

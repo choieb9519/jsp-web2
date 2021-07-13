@@ -1,7 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*" %>
+<%@ page import="util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
+
+<%
+Cookies cookies = new Cookies(request);
+%>
 
 <!DOCTYPE html>
 <html>
@@ -13,12 +18,17 @@
 </head>
 <body>
 <div class="container">
-	<form action="05setProperty2.jsp" method="post">
-		제목 : <input type="text" name="title" /> <br>
-		저자 : <input type="text" name="name" /> <br>
-		가격 : <input type="text" name="price" /> <br>
-		<input type="submit" value="등록" />
-	</form>
+	<%
+		if (cookies.exists("AUTH")) {
+	%>
+			아이디 "<%= cookies.getValue("AUTH") %>"로 로그인 한 상태
+	<%
+		} else {
+	%>
+			로그인하지 않은 상태
+	<%
+		}
+	%>
 </div>
 </body>
 </html>

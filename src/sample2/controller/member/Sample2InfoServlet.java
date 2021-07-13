@@ -16,7 +16,7 @@ import sample2.service.member.MemberService;
 /**
  * Servlet implementation class Sample2InfoServlet
  */
-@WebServlet("/sample2/mamber/info")
+@WebServlet("/sample2/member/info")
 public class Sample2InfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -51,7 +51,7 @@ public class Sample2InfoServlet extends HttpServlet {
 			
 			request.setAttribute("member", mem);
 	
-			String path = "/WEB-INF/sample2/mamber/info.jsp";
+			String path = "/WEB-INF/sample2/member/info.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 		} else {
 			String path = request.getContextPath() + "/sample2/main";

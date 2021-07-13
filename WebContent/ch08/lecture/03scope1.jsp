@@ -32,8 +32,3 @@
 <jsp:include page="03scope2.jsp"></jsp:include>
 </body>
 </html>
-
-
-
-
-

@@ -31,15 +31,10 @@
 	
 	<hr>
 	<h3>getProperty Tag</h3>
+	<!-- 액션태그 -->
 	제목 : <jsp:getProperty property="title" name="book1"/> <br>
 	저자 : <jsp:getProperty property="writer" name="book1"/>
 	
 </div>
 </body>
 </html>
-
-
-
-
-
-

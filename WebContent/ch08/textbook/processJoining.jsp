@@ -74,10 +74,3 @@ for (MemberInfo mem : list) {
 </div>
 </body>
 </html>
-
-
-
-
-
-
-

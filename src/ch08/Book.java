@@ -6,6 +6,15 @@ public class Book {
 	private String writer;
 	private String publisher;
 	private int price;
+	private boolean out;
+	
+	public boolean isOut() {
+		return out;
+	}
+	
+	public void setCode(boolean out) {
+		this.out = out;
+	}
 	
 	//java beans
 	//get set이 세트로 있어야 하는건 아님, 다 없어도 괜찮음
@@ -39,6 +48,4 @@ public class Book {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	
 }

@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-   <form action="${pageContext.request.contextPath }/sample2/mamber/signup" method="post">
+   <form action="${pageContext.request.contextPath }/sample2/member/signup" method="post">
    	id : <br>
    	<input type="text" name="id"> <br>
    	pw : <br>

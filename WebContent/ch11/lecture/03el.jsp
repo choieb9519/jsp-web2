@@ -25,8 +25,3 @@ application.setAttribute("attr1", "appVal1");
 </div>
 </body>
 </html>
-
-
-
-
-

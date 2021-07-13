@@ -13,12 +13,16 @@
 </head>
 <body>
 <div class="container">
-	<form action="05setProperty2.jsp" method="post">
-		제목 : <input type="text" name="title" /> <br>
-		저자 : <input type="text" name="name" /> <br>
-		가격 : <input type="text" name="price" /> <br>
-		<input type="submit" value="등록" />
+	<form action="<%= request.getContextPath() %>/ch09/textbook/login.jsp" method="post">
+		아이디 <input type="text" name="id" size="10">
+		암호 <input type="password" name="password" size="10" >
+		<input type="submit" value="로그인">
 	</form>
 </div>
 </body>
 </html>
+
+
+
+
+

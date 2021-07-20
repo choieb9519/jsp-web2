@@ -6,6 +6,5 @@
 	<div class="alert alert-primary">
 		${message }
 	</div>
-	
 	<c:remove var="message" />
 </c:if>

@@ -15,12 +15,9 @@
 <body>
 <s2:navbar></s2:navbar>
 <div class="container">
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<h1>${board.boardId }번 글 보기</h1>
 	
 	<form id="form1" action="${pageContext.request.contextPath }/sample2/board/modify" method="post">
-	
 	
 	제목 : <br>
 	<input name="title" id="input1" type="text" value="${board.title }" readonly>
@@ -128,9 +125,6 @@
 </div>
 </body>
 </html>
-=======
-=======
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
 	<h1>${board.id }번 글 보기</h1>
 	제목 : <br>
 	<input type="text" value="${board.title }" readonly>
@@ -144,20 +138,6 @@
 	작성시간 : <br>
 	<input type="text" value="${board.timeAgo }" readonly>
 	
-	
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45
-=======
->>>>>>> 9bcedfc860e708cf72e20978218325c3bf97aa45

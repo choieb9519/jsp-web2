@@ -33,6 +33,6 @@ public class Sample2AppListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce)  { 
          // TODO Auto-generated method stub
     	TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-    }
+    }   //다른 메소드보다 먼저 실행된다고 명시, 타임존 명시
 	
 }
